@@ -1,5 +1,5 @@
 ﻿/// <autosync enabled="true" />
-/// <reference path="js/app.js" />
+/// <reference path="js/adminlte.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="lib/datatables/media/js/jquery.dataTables.js" />

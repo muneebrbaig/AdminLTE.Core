@@ -26,7 +26,7 @@
         </form>*@
         <!-- /.search form -->
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" data-widget="tree">
             @foreach (var menu in Model as IEnumerable<SidebarMenu>)
             {
                 if (menu.Type == SidebarMenuType.Header)
