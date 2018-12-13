@@ -17,6 +17,8 @@ namespace AdminLTE.Common
             Error,
             Login,
             Register,
+            SuperAdmin,
+            Role,
         }
 
         public static SidebarMenu AddHeader(string name)
@@ -99,6 +101,24 @@ namespace AdminLTE.Common
                         Name = "Error",
                         IconClassName = "fa fa-warning",
                         URLPath = "/Home/Error",
+                        LinkCounter = counter,
+                    };
+                case Module.SuperAdmin:
+                    return new SidebarMenu
+                    {
+                        Type = SidebarMenuType.Link,
+                        Name = "User",
+                        IconClassName = "fa fa-link",
+                        URLPath = "/SuperAdmin",
+                        LinkCounter = counter,
+                    };
+                case Module.Role:
+                    return new SidebarMenu
+                    {
+                        Type = SidebarMenuType.Link,
+                        Name = "Role",
+                        IconClassName = "fa fa-link",
+                        URLPath = "/Role",
                         LinkCounter = counter,
                     };
 

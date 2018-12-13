@@ -116,6 +116,9 @@ namespace AdminLTE
             //    await context.Response.WriteAsync("ill be executed after the code above!");
             //    Debug.WriteLine("invoke thru await next.Invoke();");
             //});
+
+            // Populate default user admin
+            DataSeed.Seed(app.ApplicationServices).Wait();
         }
     }
 }

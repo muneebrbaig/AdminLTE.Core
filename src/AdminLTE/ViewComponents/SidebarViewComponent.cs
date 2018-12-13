@@ -36,6 +36,16 @@ namespace AdminLTE.ViewComponents
                 ModuleHelper.AddModule(ModuleHelper.Module.Register, Tuple.Create(1, 1, 1)),
             };
 
+            if (User.IsInRole("SuperAdmins"))
+            {
+                sidebars.Add(ModuleHelper.AddTree("Administration"));
+                sidebars.Last().TreeChild = new List<SidebarMenu>()
+            {
+                ModuleHelper.AddModule(ModuleHelper.Module.SuperAdmin),
+                ModuleHelper.AddModule(ModuleHelper.Module.Role),
+            };
+            }
+
             return View(sidebars);
         }
     }
