@@ -86,3 +86,15 @@ function useSubmitClass() {
         $(this).find($('button[type=submit]')).prop("disabled", false).find($('i')).remove()
     });
 }//*/
+
+function useDeleteConfirmation() {
+    $('.btn-delete').on("click", function (e) {
+        e.preventDefault();
+
+        var choice = confirm("Are you sure you want to delete?");
+
+        if (choice) {
+            window.location.href = $(this).attr('href');
+        }
+    });
+}
