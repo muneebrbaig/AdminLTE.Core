@@ -19,6 +19,7 @@ namespace AdminLTE.Common
             Register,
             SuperAdmin,
             Role,
+            UserLogs
         }
 
         public static SidebarMenu AddHeader(string name)
@@ -119,6 +120,15 @@ namespace AdminLTE.Common
                         Name = "Role",
                         IconClassName = "fa fa-link",
                         URLPath = "/Role",
+                        LinkCounter = counter,
+                    };
+                case Module.UserLogs:
+                    return new SidebarMenu
+                    {
+                        Type = SidebarMenuType.Link,
+                        Name = "UserLogs",
+                        IconClassName = "fa fa-link",
+                        URLPath = "/UserLogs",
                         LinkCounter = counter,
                     };
 

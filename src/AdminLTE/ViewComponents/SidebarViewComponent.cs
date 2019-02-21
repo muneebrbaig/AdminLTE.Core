@@ -40,10 +40,11 @@ namespace AdminLTE.ViewComponents
             {
                 sidebars.Add(ModuleHelper.AddTree("Administration"));
                 sidebars.Last().TreeChild = new List<SidebarMenu>()
-            {
-                ModuleHelper.AddModule(ModuleHelper.Module.SuperAdmin),
-                ModuleHelper.AddModule(ModuleHelper.Module.Role),
-            };
+                {
+                    ModuleHelper.AddModule(ModuleHelper.Module.SuperAdmin),
+                    ModuleHelper.AddModule(ModuleHelper.Module.Role),
+                };
+                sidebars.Add(ModuleHelper.AddModule(ModuleHelper.Module.UserLogs));
             }
 
             return View(sidebars);
