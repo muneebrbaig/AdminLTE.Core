@@ -69,9 +69,9 @@ if (docCookies.hasItem("sidebarstate")) {
 }
 
 /*global datatable defaults*/
-$.extend(true, $.fn.dataTable.defaults, {
+//$.extend(true, $.fn.dataTable.defaults, {
    
-});
+//});
 
 /* automatically defaults all submit button to be disabled */
 /*
