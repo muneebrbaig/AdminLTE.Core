@@ -133,7 +133,7 @@ namespace AdminLTE.Controllers
         [ValidateAntiForgeryToken]
         // the names of its parameters must be the same as the property of the User class if we use asp-for in the view
         // otherwise form values won't be passed properly
-        public async Task<IActionResult> Edit(string id, string userName, string email, string password)
+        public async Task<IActionResult> Edit(string id, string userName, string email)
         {
             ApplicationUser user = await userManager.FindByIdAsync(id);
 
@@ -148,6 +148,52 @@ namespace AdminLTE.Controllers
                     AddErrors(validUseResult);
                 }
 
+                // Update user info
+                if (validUseResult.Succeeded)
+                {
+                    // UpdateAsync validates user info such as UserName and Email except password since it's been hashed 
+                    IdentityResult result = await userManager.UpdateAsync(user);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "SuperAdmin");
+                    }
+                    else
+                    {
+                        AddErrors(result);
+                    }
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "User Not Found");
+            }
+            ;
+
+            return View(user);
+        }
+
+        public async Task<IActionResult> ChangePassword(string id)
+        {
+            ApplicationUser user = await userManager.FindByIdAsync(id);
+
+            if (user != null)
+            {
+                return View(user);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(string id, string password)
+        {
+            ApplicationUser user = await userManager.FindByIdAsync(id);
+
+            if (user != null)
+            {
                 // Validate password
                 // Step 1: using built in validations
                 IdentityResult passwordResult = await userManager.CreateAsync(testUser, password);
@@ -172,7 +218,7 @@ namespace AdminLTE.Controllers
                 }
 
                 // Update user info
-                if (validUseResult.Succeeded && passwordResult.Succeeded && validPasswordResult.Succeeded)
+                if (passwordResult.Succeeded && validPasswordResult.Succeeded)
                 {
                     // UpdateAsync validates user info such as UserName and Email except password since it's been hashed 
                     IdentityResult result = await userManager.UpdateAsync(user);
@@ -190,7 +236,6 @@ namespace AdminLTE.Controllers
             {
                 ModelState.AddModelError("", "User Not Found");
             }
-            ;
 
             return View(user);
         }
