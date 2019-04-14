@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Layout = "";
 }
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="~/lib/ionicons/css/ionicons.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/error.css"/>
+        <link rel="stylesheet" href="~/css/error.css" />
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" asp-append-version="true" />
@@ -34,11 +34,12 @@
         <div class="">
 
             <div class="block-error">
+                <div class="row">
+                    <div class="error-num">404</div>
+                    <div class="error-text">Page not found</div>
 
-                <div class="error-num">404</div>
-                <div class="error-text">Page not found</div>
-
-                <div class="error-description">Unfortunately we're having trouble loading the page you are looking for. Please verify if you have the right permission and try again or use action below.</div>
+                    <div class="error-description">Unfortunately we're having trouble loading the page you are looking for. Please verify if you have the right permission and try again or use action below.</div>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <button class="btn btn-info btn-block" onClick="document.location.href = '/';">Back to dashboard</button>

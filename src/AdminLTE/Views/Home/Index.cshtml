@@ -1,17 +1,17 @@
 ﻿<environment names="Development">
-    <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.css" asp-append-version="true"/>
 </environment>
 <environment names="Staging,Production">
-    <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.min.css" asp-append-version="true" />
 </environment>
 
 <environment names="Development">
     <script src="~/lib/datatables/js/jquery.dataTables.js" asp-append-version="true"></script>
-    <script src="~/lib/datatables/js/dataTables.bootstrap.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.js" asp-append-version="true"></script>
 </environment>
 <environment names="Staging,Production">
     <script src="~/lib/datatables/js/jquery.dataTables.min.js" asp-append-version="true"></script>
-    <script src="~/lib/datatables/js/dataTables.bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js" asp-append-version="true"></script>
 </environment>
 
 <div class="box">
@@ -54,13 +54,13 @@
                 { "defaultContent": "<button class='btn btn-primary btn-sm'>Details</button>", "targets": [7] },
                 { "searchable": false, "targets": [0,2,4,5,6] },
                 { "render": function (data, type, row) {
-                            return ' <label class="label label-primary">' + data + '</label>';},
+                            return ' <label class="badge label-primary">' + data + '</label>';},
                   "targets": [4] },
                 { "render": function (data, type, row) {
                         if (row['quantity'] > 1)
-                            return ' <label class="label label-success">' + row['quantity'] + '</label>'
+                            return ' <label class="badge label-success">' + row['quantity'] + '</label>'
                         else
-                            return ' <label class="label label-default">' + row['quantity'] + '</label>';},
+                            return ' <label class="badge label-default">' + row['quantity'] + '</label>';},
                    "targets": [2]},
             ],
             "language":
@@ -89,7 +89,7 @@
             "dom": "<'row'<'col-sm-6'l><'col-sm-6'<'#buttonContainer.site-datatable-button-container'>f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-5'i><'col-sm-7'p>>",
         });
         
-        $("#buttonContainer").addClass("pull-right").append("<button class='btn btn-sm bg-olive'>Create</button>");
+        $("#buttonContainer").addClass("float-right").append("<button class='btn btn-sm bg-success'>Create</button>");
 
     });
 </script>
