@@ -35,13 +35,13 @@
       "destination": "wwwroot/lib/fastclick/"
     },
     {
-      "library": "font-awesome@4.7.0",
+      "library": "font-awesome@5.10.0-11",
       "destination": "wwwroot/lib/font-awesome/"
     }
   ,
 {
   "provider": "jsdelivr",
-  "library": "admin-lte@3.0.0-alpha.2",
+  "library": "admin-lte@3.0.0-beta.1",
   "destination": "wwwroot/lib/admin-lte/",
   "files": [
     "dist/css/adminlte.css",

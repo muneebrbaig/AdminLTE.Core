@@ -82,7 +82,7 @@ namespace AdminLTE.Common
                     {
                         Type = SidebarMenuType.Link,
                         Name = "About",
-                        IconClassName = "fa fa-group",
+                        IconClassName = "fa fa-users",
                         URLPath = "/Home/About",
                         LinkCounter = counter,
                     };
@@ -100,7 +100,7 @@ namespace AdminLTE.Common
                     {
                         Type = SidebarMenuType.Link,
                         Name = "Error",
-                        IconClassName = "fa fa-warning",
+                        IconClassName = "fa fa-exclamation-triangle",
                         URLPath = "/Home/Error",
                         LinkCounter = counter,
                     };
