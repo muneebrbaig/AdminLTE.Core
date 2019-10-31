@@ -69,7 +69,7 @@ namespace AdminLTE.Controllers
             List<ApplicationUser> members = new List<ApplicationUser>();
             List<ApplicationUser> nonMember = new List<ApplicationUser>();
 
-            foreach (ApplicationUser user in userManager.Users)
+            foreach (ApplicationUser user in userManager.Users.ToArray())
             {
                 var list = await userManager.IsInRoleAsync(user, role.Name)
                     ? members
