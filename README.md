@@ -1,15 +1,19 @@
-# **Admin**LTE - MVC Core 2
+# **Admin**LTE - MVC Core 3.1
 This template is based from AdminLTE of http://almsaeedstudio.com.
 Converted as a .Net project.
+Credit goes to original posters, from which this is forked.
 
 ## Prerequisites
 as a minimum, you should have the following installed
-* Visual Studio 2017 (15.8) or 2019
+* Visual Studio 2019
 
-_built using .NET Core 2
+_built using .NET Core 3.1
 
 ## Installation
 Just clone or fork this. Whatever you want. Restore client side libraries. Run the solution.
+
+##NOTE
+Following sections will be re-written once I'll upgrade the entire project.
 
 ## Features
 ### Controls are ViewComponent like a **UserControl**
